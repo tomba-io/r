@@ -256,6 +256,7 @@ setGeneric(name="count",
 #'
 #' @md
 #' @param obj Tomba class
+#' @param domain Domain name from which you want to find the email addresses. For example, "stripe.com".
 #' @references <https://developer.tomba.io/#email-count>
 #' @return domain count data
 #' @export
@@ -280,6 +281,7 @@ setGeneric(name="status",
 #'
 #' @md
 #' @param obj Tomba class
+#' @param domain Domain name from which you want to check. For example, "gmail.com".
 #' @references <https://developer.tomba.io/#domain-status>
 #' @return domain status data
 #' @export
@@ -305,6 +307,7 @@ setGeneric(name="autocomplete",
 #'
 #' @md
 #' @param obj Tomba class
+#' @param search name of the company or website.
 #' @references <https://developer.tomba.io/#autocomplete>
 #' @return autocomplete data
 #' @export
