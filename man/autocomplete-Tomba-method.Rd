@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{obj}{Tomba class}
+
+\item{search}{name of the company or website.}
 }
 \value{
 autocomplete data

@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{obj}{Tomba class}
+
+\item{domain}{Domain name from which you want to find the email addresses. For example, "stripe.com".}
 }
 \value{
 domain count data

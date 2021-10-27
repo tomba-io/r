@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{obj}{Tomba class}
+
+\item{domain}{Domain name from which you want to check. For example, "gmail.com".}
 }
 \value{
 domain status data
