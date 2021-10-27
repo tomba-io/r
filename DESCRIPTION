@@ -1,7 +1,7 @@
 Package: tomba
 Type: Package
 Title: Official R library for Tomba Email Finder
-Version: 1.0.0
+Version: 1.0.1
 Date: 2021-10-27
 Author: Abedrahim Ben rebia
 Maintainer: Abedrahim Ben rebia <b.abedrahim@tomba.io>
@@ -10,16 +10,16 @@ Description: Tomba Email Finder R Client Library
             Email Finder generates or retrieves the most likely email address from a domain name, a first name and a last name.
             Email Verifier checks the deliverability of a given email address, verifies if it has been found in our database, and returns their sources.
 License: Apache License (>= 2.0) + file LICENSE
-URL: https://tomba.io/
+URL: https://tomba.io/,https://github.com/tomba-io/
 BugReports: https://github.com/tomba-io/r/issues
 Encoding: UTF-8
 LazyData: true
 Imports:
     httr,
-    jsonlite
+    jsonlite,
+    testthat
 RoxygenNote: 7.1.2.9000
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.0.0)
 Language: en-US
-
 
