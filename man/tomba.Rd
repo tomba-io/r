@@ -4,6 +4,9 @@
 \name{tomba}
 \alias{tomba}
 \title{The official R client library for the tomba.io}
+\description{
+Search emails are based on the website You give one domain name and it returns all the email addresses found on the internet. at \url{https://tomba.io/}
+}
 \author{
 Abedrahim Ben rebia \href{mailto:b.abedrahim@tomba.io}{b.abedrahim@tomba.io}
 }

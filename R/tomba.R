@@ -1,5 +1,3 @@
-
-
 #' DEFAULT BASE URL
 DEFAULT_BASE_URL <- "https://api.tomba.io/v1/"
 #' Account path
@@ -36,6 +34,11 @@ Tomba <- setClass(
   # Set the default values for the slots. (optional)
 )
 
+#' Tomba Client
+#'
+#' @param obj Tomba class
+#' @param path      specific path.
+#' @param query      query list
 setGeneric(name="client",
              def=function(obj, path, query = NULL)
              {
@@ -76,6 +79,12 @@ setMethod(f="client",
           }
 )
 
+#' Returns information about the current account.
+#'
+#' @md
+#' @param obj Tomba class
+#' @references <https://developer.tomba.io/#account-information>
+#' @return your account data
 setGeneric(name="account",
            def=function(obj)
            {
@@ -98,7 +107,12 @@ setMethod(f="account",
           }
 )
 
-
+#' Search emails are based on the website You give one domain name and it returns all the email addresses found on the internet.
+#'
+#' @md
+#' @param obj Tomba class
+#' @param domain Domain name from which you want to find the email addresses. For example, "stripe.com".
+#' @references <https://developer.tomba.io/#domain-search>
 setGeneric(name="domain_search",
            def=function(obj,domain)
            {
@@ -123,7 +137,14 @@ setMethod(f="domain_search",
           }
 )
 
-
+#' Generates or retrieves the most likely email address from a domain name, a first name and a last name.
+#'
+#' @md
+#' @param obj Tomba class
+#' @param domain The domain name of the company, used for emails. For example, "asana.com".
+#' @param fname The person's first name. It doesn't need to be in lowercase..
+#' @param lname The person's last name. It doesn't need to be in lowercase..
+#' @references <https://developer.tomba.io/#email-finder>
 setGeneric(name="email_finder",
            def=function(obj,domain,fname,lname)
            {
@@ -152,7 +173,12 @@ setMethod(f="email_finder",
             return (client(obj,paste0(FINDER_PATH,domain),query))
           }
 )
-
+#' Verify the deliverability of an email address.
+#'
+#' @md
+#' @param obj Tomba class
+#' @param email The email address you want to verify.
+#' @references <https://developer.tomba.io/#email-verifier>
 setGeneric(name="email_verifier",
            def=function(obj,email)
            {
@@ -176,7 +202,13 @@ setMethod(f="email_verifier",
           }
 )
 
-
+#' Find email address source somewhere on the web.
+#'
+#' @md
+#' @param obj Tomba class
+#' @param email The email address you want to find sources.
+#' @references <https://developer.tomba.io/#email-sources>
+#' @return sources data
 setGeneric(name="email_sources",
            def=function(obj,email)
            {
@@ -199,7 +231,11 @@ setMethod(f="email_sources",
             return (client(obj,paste0(SOURCES_PATH,email),NULL))
           }
 )
-
+#' Returns a your monthly requests.
+#'
+#' @md
+#' @param obj Tomba class
+#' @references <https://developer.tomba.io/#usage>
 setGeneric(name="usage",
            def=function(obj)
            {
@@ -221,9 +257,13 @@ setMethod(f="usage",
             return (client(obj,USAGE_PATH,NULL))
           }
 )
-
+#' Returns a your last 1,000 requests you made during the last 3 months.
+#'
+#' @md
+#' @param obj Tomba class
+#' @references <https://developer.tomba.io/#logs>
 setGeneric(name="logs",
-           def=function(obj,email)
+           def=function(obj)
            {
              standardGeneric("logs")
            }
@@ -243,7 +283,12 @@ setMethod(f="logs",
             return (client(obj,LOGS_PATH,NULL))
           }
 )
-
+#' Returns total email addresses we have for one domain.
+#'
+#' @md
+#' @param obj Tomba class
+#' @param domain Domain name from which you want to find the email addresses. For example, "stripe.com".
+#' @references <https://developer.tomba.io/#email-count>
 setGeneric(name="count",
            def=function(obj,domain)
            {
@@ -270,7 +315,12 @@ setMethod(f="count",
             return (client(obj,COUNT_PATH,query))
           }
 )
-
+#' Returns domain status if is webmail or disposable.
+#'
+#' @md
+#' @param obj Tomba class
+#' @param domain Domain name from which you want to check. For example, "gmail.com".
+#' @references <https://developer.tomba.io/#domain-status>
 setGeneric(name="status",
            def=function(obj,domain)
            {
@@ -295,7 +345,12 @@ setMethod(f="status",
             return (client(obj,STATUS_PATH,query))
           }
 )
-
+#' Company Autocomplete is an API that lets you auto-complete company names and retreive logo and domain information.
+#'
+#' @md
+#' @param obj Tomba class
+#' @param search name of the company or website.
+#' @references <https://developer.tomba.io/#autocomplete>
 setGeneric(name="autocomplete",
            def=function(obj,search)
            {
