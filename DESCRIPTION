@@ -13,7 +13,6 @@ License: MIT + file LICENSE
 URL: https://tomba.io/,https://github.com/tomba-io/r
 BugReports: https://github.com/tomba-io/r/issues
 Encoding: UTF-8
-LazyData: true
 Imports:
     httr,
     jsonlite,
