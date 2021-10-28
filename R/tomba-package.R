@@ -7,4 +7,5 @@
 #' @author Abedrahim Ben rebia <b.abedrahim@tomba.io>
 #' @import httr
 #' @import jsonlite
+#' @import methods
 NULL
