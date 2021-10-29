@@ -2,21 +2,33 @@
 % Please edit documentation in R/tomba.R
 \name{email_finder}
 \alias{email_finder}
-\title{Generates or retrieves the most likely email address from a domain name, a first name and a last name.}
+\alias{email_finder,Tomba-method}
+\title{Email Finder}
 \usage{
 email_finder(obj, domain, fname, lname)
+
+\S4method{email_finder}{Tomba}(obj, domain, fname, lname)
 }
 \arguments{
 \item{obj}{Tomba class}
 
-\item{domain}{The domain name of the company, used for emails. For example, "asana.com".}
+\item{domain}{a character domain name of the company, used for emails. For example, "asana.com".}
 
 \item{fname}{The person's first name. It doesn't need to be in lowercase..}
 
 \item{lname}{The person's last name. It doesn't need to be in lowercase..}
 }
+\value{
+A list persons data containing the: first_name,last_name,email,score,department,last_updated.
+}
 \description{
-Generates or retrieves the most likely email address from a domain name, a first name and a last name.
+\code{email_finder} Generates or retrieves the most likely email address from a domain name, a first name and a last name.
+}
+\examples{
+\dontrun{
+client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+result <- email_finder(obj,fname="FIRST_NAME",lname="LASST_NAME")
+}
 }
 \references{
 \url{https://developer.tomba.io/#email-finder}

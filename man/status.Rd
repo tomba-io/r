@@ -2,17 +2,29 @@
 % Please edit documentation in R/tomba.R
 \name{status}
 \alias{status}
-\title{Returns domain status if is webmail or disposable.}
+\alias{status,Tomba-method}
+\title{Domain status}
 \usage{
 status(obj, domain)
+
+\S4method{status}{Tomba}(obj, domain)
 }
 \arguments{
 \item{obj}{Tomba class}
 
-\item{domain}{Domain name from which you want to check. For example, "gmail.com".}
+\item{domain}{a character Domain name from which you want to check. For example, "gmail.com".}
+}
+\value{
+A list domain status data containing the: is webmail email service or is disposable email service
 }
 \description{
-Returns domain status if is webmail or disposable.
+\code{status} Returns domain status if is webmail or disposable.
+}
+\examples{
+\dontrun{
+client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+result <- status(client,domain="gmail.com")
+}
 }
 \references{
 \url{https://developer.tomba.io/#domain-status}

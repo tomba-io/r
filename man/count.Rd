@@ -2,17 +2,29 @@
 % Please edit documentation in R/tomba.R
 \name{count}
 \alias{count}
-\title{Returns total email addresses we have for one domain.}
+\alias{count,Tomba-method}
+\title{Email Count}
 \usage{
 count(obj, domain)
+
+\S4method{count}{Tomba}(obj, domain)
 }
 \arguments{
 \item{obj}{Tomba class}
 
-\item{domain}{Domain name from which you want to find the email addresses. For example, "stripe.com".}
+\item{domain}{a character Domain name from which you want to find the email addresses. For example, "stripe.com".}
+}
+\value{
+A list domain count data containing the: Total email,Total personal email,Total generic email,Total email on department \emph{key_name}.
 }
 \description{
-Returns total email addresses we have for one domain.
+\code{count} Returns total email addresses we have for one domain.
+}
+\examples{
+\dontrun{
+client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+result <- count(client,domain="tomba.io")
+}
 }
 \references{
 \url{https://developer.tomba.io/#email-count}

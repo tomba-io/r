@@ -2,17 +2,29 @@
 % Please edit documentation in R/tomba.R
 \name{client}
 \alias{client}
+\alias{client,Tomba-method}
 \title{Tomba Client}
 \usage{
 client(obj, path, query = NULL)
+
+\S4method{client}{Tomba}(obj, path, query = NULL)
 }
 \arguments{
 \item{obj}{Tomba class}
 
-\item{path}{specific path.}
+\item{path}{a character specific path.}
 
-\item{query}{query list}
+\item{query}{a list for httr request query}
+}
+\value{
+A list of http response
 }
 \description{
-Tomba Client
+\code{client} Tomba http Client
+}
+\examples{
+\dontrun{
+client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+result <- client(obj,"https://api.tomba.io/v1/me",null)
+}
 }

@@ -2,15 +2,27 @@
 % Please edit documentation in R/tomba.R
 \name{logs}
 \alias{logs}
-\title{Returns a your last 1,000 requests you made during the last 3 months.}
+\alias{logs,Tomba-method}
+\title{Logs}
 \usage{
 logs(obj)
+
+\S4method{logs}{Tomba}(obj)
 }
 \arguments{
 \item{obj}{Tomba class}
 }
+\value{
+A list requests data containing the: url and The User Agent and IP address associated with the Request,The cost false Free true 1 request,The date,The ISO 3166-1 alpha-2 country code.
+}
 \description{
-Returns a your last 1,000 requests you made during the last 3 months.
+\code{logs} Returns a your last 1,000 requests you made during the last 3 months.
+}
+\examples{
+\dontrun{
+client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+result <- logs(client)
+}
 }
 \references{
 \url{https://developer.tomba.io/#logs}

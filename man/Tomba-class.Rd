@@ -4,7 +4,15 @@
 \name{Tomba-class}
 \alias{Tomba-class}
 \alias{Tomba}
-\title{The Tomba API Constructor}
+\title{Tomba init}
 \description{
-The Tomba API Constructor
+An S4 class The Tomba API Constructor
 }
+\section{Slots}{
+
+\describe{
+\item{\code{key}}{A character Tomba API KEY}
+
+\item{\code{secret}}{A character Tomba SECRET KEY}
+}}
+

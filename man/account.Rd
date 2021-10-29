@@ -2,18 +2,27 @@
 % Please edit documentation in R/tomba.R
 \name{account}
 \alias{account}
-\title{Returns information about the current account.}
+\alias{account,Tomba-method}
+\title{Account}
 \usage{
 account(obj)
+
+\S4method{account}{Tomba}(obj)
 }
 \arguments{
 \item{obj}{Tomba class}
 }
 \value{
-your account data
+A list your account data containing your pricing,first_name,last_name,email,country,requests used on domain search and email finder, and email verifier.
 }
 \description{
-Returns information about the current account.
+\code{account} Returns information about the current account.
+}
+\examples{
+\dontrun{
+client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+result <- account(obj)
+}
 }
 \references{
 \url{https://developer.tomba.io/#account-information}

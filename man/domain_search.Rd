@@ -2,17 +2,29 @@
 % Please edit documentation in R/tomba.R
 \name{domain_search}
 \alias{domain_search}
-\title{Search emails are based on the website You give one domain name and it returns all the email addresses found on the internet.}
+\alias{domain_search,Tomba-method}
+\title{Domain search}
 \usage{
 domain_search(obj, domain)
+
+\S4method{domain_search}{Tomba}(obj, domain)
 }
 \arguments{
 \item{obj}{Tomba class}
 
 \item{domain}{Domain name from which you want to find the email addresses. For example, "stripe.com".}
 }
+\value{
+A list domain data containing the organization name,country,social links, and list of emails.
+}
 \description{
-Search emails are based on the website You give one domain name and it returns all the email addresses found on the internet.
+\code{domain_search} Search emails are based on the website You give one domain name and it returns all the email addresses found on the internet.
+}
+\examples{
+\dontrun{
+client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+result <- domain_search(obj,domain="stripe")
+}
 }
 \references{
 \url{https://developer.tomba.io/#domain-search}

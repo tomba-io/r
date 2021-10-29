@@ -2,17 +2,29 @@
 % Please edit documentation in R/tomba.R
 \name{email_verifier}
 \alias{email_verifier}
-\title{Verify the deliverability of an email address.}
+\alias{email_verifier,Tomba-method}
+\title{Email Verifier}
 \usage{
 email_verifier(obj, email)
+
+\S4method{email_verifier}{Tomba}(obj, email)
 }
 \arguments{
 \item{obj}{Tomba class}
 
-\item{email}{The email address you want to verify.}
+\item{email}{a character email address you want to verify.}
+}
+\value{
+A list email data containing the: MX records,SMTP server accepts all,SMTP check,deliverability score,status of the email address,status of the verification.
 }
 \description{
-Verify the deliverability of an email address.
+\code{email_verifier} Verify the deliverability of an email address.
+}
+\examples{
+\dontrun{
+client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+result <- email_verifier(obj,email="info@tomba.io")
+}
 }
 \references{
 \url{https://developer.tomba.io/#email-verifier}

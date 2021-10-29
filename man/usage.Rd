@@ -2,15 +2,27 @@
 % Please edit documentation in R/tomba.R
 \name{usage}
 \alias{usage}
-\title{Returns a your monthly requests.}
+\alias{usage,Tomba-method}
+\title{Usage}
 \usage{
 usage(obj)
+
+\S4method{usage}{Tomba}(obj)
 }
 \arguments{
 \item{obj}{Tomba class}
 }
+\value{
+A list requests data containing the: usage of the domain,finder,verifier and source from: Website, Google Sheets add-on,api, browser extension, bulk tasks.
+}
 \description{
-Returns a your monthly requests.
+\code{usage} Check your monthly requests.
+}
+\examples{
+\dontrun{
+client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+result <- usage(client)
+}
 }
 \references{
 \url{https://developer.tomba.io/#usage}
