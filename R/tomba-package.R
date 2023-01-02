@@ -8,4 +8,5 @@
 #' @import httr
 #' @import jsonlite
 #' @import methods
+#' @import testthat
 NULL

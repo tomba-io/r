@@ -27,7 +27,7 @@ A list persons data containing the: first_name,last_name,email,score,department,
 \examples{
 \dontrun{
 client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
-result <- email_finder(obj,fname="FIRST_NAME",lname="LASST_NAME")
+result <- email_finder(client,fname="FIRST_NAME",lname="LASST_NAME")
 }
 }
 \references{

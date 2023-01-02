@@ -7,9 +7,15 @@ USAGE_PATH <- "usage"
 #' Logs path
 LOGS_PATH <- "logs"
 #' Search path
-SEARCH_PATH <- "domain-search/"
+SEARCH_PATH <- "domain-search"
 #' Finder path
-FINDER_PATH <- "email-finder/"
+FINDER_PATH <- "email-finder"
+#' Finder path
+AUTHOR_PATH <- "author-finder"
+#' Finder path
+LINKEDIN_PATH <- "linkedin"
+#' Finder path
+PHONE_PATH <- "phone/"
 #' Verifier path
 VERIFIER_PATH <- "email-verifier/"
 #' Email Sources path
@@ -142,7 +148,10 @@ setMethod(f="domain_search",
           signature="Tomba",
           definition=function(obj,domain)
           {
-            return (client(obj,paste0(SEARCH_PATH,domain),NULL))
+            query = list(
+              `domain` = domain
+            )
+            return (client(obj,SEARCH_PATH,query))
           }
 )
 
@@ -159,7 +168,7 @@ setMethod(f="domain_search",
 #' @examples
 #' \dontrun{
 #' client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
-#' result <- email_finder(obj,fname="FIRST_NAME",lname="LASST_NAME")
+#' result <- email_finder(client,fname="FIRST_NAME",lname="LASST_NAME")
 #' }
 #' @rdname email_finder
 #' @export
@@ -176,10 +185,110 @@ setMethod(f="email_finder",
           definition=function(obj,domain,fname,lname)
           {
             query = list(
+              `domain` = domain,
               `first_name` = fname,
               `last_name` = lname
             )
-            return (client(obj,paste0(FINDER_PATH,domain),query))
+            return (client(obj,FINDER_PATH,query))
+          }
+)
+
+#' @title Author Finder
+#' @description \code{author_finder} This API endpoint generates or retrieves the most likely email address from a blog post url.
+#'
+#' @md
+#' @param obj Tomba class
+#' @param url a character The URL of the article. For example, "https://clearbit.com/blog/company-name-to-domain-api".
+#' @references <https://developer.tomba.io/#author-finder>
+#' @return A list persons data containing the: first_name,last_name,email,score,department,last_updated.
+#' @examples
+#' \dontrun{
+#' client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+#' result <- author_finder(client,url="https://clearbit.com/blog/company-name-to-domain-api")
+#' }
+#' @rdname author_finder
+#' @export
+setGeneric(name="author_finder",
+           def=function(obj,url)
+           {
+             standardGeneric("author_finder")
+           }
+)
+
+#' @rdname author_finder
+setMethod(f="author_finder",
+          signature="Tomba",
+          definition=function(obj,url)
+          {
+            query = list(
+              `url` = url
+            )
+            return (client(obj,AUTHOR_PATH,query))
+          }
+)
+
+#' @title Author Finder
+#' @description \code{linkedin_finder} This API endpoint generates or retrieves the most likely email address from a Linkedin URL.
+#'
+#' @md
+#' @param obj Tomba class
+#' @param url a character The URL of the Linkedin. For example, "https://www.linkedin.com/in/alex-maccaw-ab592978".
+#' @references <https://developer.tomba.io/#linkedin-finder>
+#' @return A list persons data containing the: first_name,last_name,email,score,department,last_updated.
+#' @examples
+#' \dontrun{
+#' client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+#' result <- linkedin_finder(client,url="httpshttps://www.linkedin.com/in/alex-maccaw-ab592978")
+#' }
+#' @rdname linkedin_finder
+#' @export
+setGeneric(name="linkedin_finder",
+           def=function(obj,url)
+           {
+             standardGeneric("linkedin_finder")
+           }
+)
+
+#' @rdname linkedin_finder
+setMethod(f="linkedin_finder",
+          signature="Tomba",
+          definition=function(obj,url)
+          {
+            query = list(
+              `url` = url
+            )
+            return (client(obj,LINKEDIN_PATH,query))
+          }
+)
+
+#' @title Phone Finder
+#' @description \code{phone_finder} Search phone are based on the email You give one email and it returns phone data.
+#'
+#' @md
+#' @param obj Tomba class
+#' @param email a character The email address you want to find phone.
+#' @references <https://developer.tomba.io/#phone-finder>
+#' @return A list phone data containing the: local_format,intl_format,country_code,line_type,carrier,timezones
+#' @examples
+#' \dontrun{
+#' client <- Tomba(key="ta_xxxx",secret="ts_xxxx")
+#' result <- phone_finder(client,email="******@zapier.com")
+#' }
+#' @rdname phone_finder
+#' @export
+setGeneric(name="phone_finder",
+           def=function(obj,email)
+           {
+             standardGeneric("phone_finder")
+           }
+)
+
+#' @rdname phone_finder
+setMethod(f="phone_finder",
+          signature="Tomba",
+          definition=function(obj,email)
+          {
+            return (client(obj,paste0(PHONE_PATH,email),NULL))
           }
 )
 
