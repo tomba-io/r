@@ -1,8 +1,8 @@
 Package: tomba
 Title: Official R Library for Tomba Email Finder
 Type: Package
-Version: 1.0.1
-Date: 2021-10-29
+Version: 1.0.2
+Date: 2023-01-02
 Author: Abedrahim Ben rebia [aut, cre],Mohamed Ben rebia [ctb], Tomba.io [cph]
 Maintainer: Abedrahim Ben rebia <b.abedrahim@tomba.io>
 Copyright: Tomba technology web service LLC, and the package authors for all other content.
