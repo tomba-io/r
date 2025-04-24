@@ -96,7 +96,7 @@ setMethod(f="client",
 #'
 #' @md
 #' @param obj Tomba class
-#' @references <https://developer.tomba.io/#account-information>
+#' @references <https://docs.tomba.io/api/account#get-account>
 #' @return A list your account data containing your pricing,first_name,last_name,email,country,requests used on domain search and email finder, and email verifier.
 #' @examples
 #' \dontrun{
@@ -127,7 +127,7 @@ setMethod(f="account",
 #' @md
 #' @param obj Tomba class
 #' @param domain Domain name from which you want to find the email addresses. For example, "stripe.com".
-#' @references <https://developer.tomba.io/#domain-search>
+#' @references <https://docs.tomba.io/api/finder#domain-search>
 #' @return A list domain data containing the organization name,country,social links, and list of emails.
 #' @examples
 #' \dontrun{
@@ -163,7 +163,7 @@ setMethod(f="domain_search",
 #' @param domain a character domain name of the company, used for emails. For example, "asana.com".
 #' @param fname The person's first name. It doesn't need to be in lowercase..
 #' @param lname The person's last name. It doesn't need to be in lowercase..
-#' @references <https://developer.tomba.io/#email-finder>
+#' @references <https://docs.tomba.io/api/finder#email-finder>
 #' @return A list persons data containing the: first_name,last_name,email,score,department,last_updated.
 #' @examples
 #' \dontrun{
@@ -199,7 +199,7 @@ setMethod(f="email_finder",
 #' @md
 #' @param obj Tomba class
 #' @param url a character The URL of the article. For example, "https://clearbit.com/blog/company-name-to-domain-api".
-#' @references <https://developer.tomba.io/#author-finder>
+#' @references <https://docs.tomba.io/api/finder#author-finder>
 #' @return A list persons data containing the: first_name,last_name,email,score,department,last_updated.
 #' @examples
 #' \dontrun{
@@ -227,13 +227,13 @@ setMethod(f="author_finder",
           }
 )
 
-#' @title Author Finder
+#' @title Linkedin Finder
 #' @description \code{linkedin_finder} This API endpoint generates or retrieves the most likely email address from a Linkedin URL.
 #'
 #' @md
 #' @param obj Tomba class
 #' @param url a character The URL of the Linkedin. For example, "https://www.linkedin.com/in/alex-maccaw-ab592978".
-#' @references <https://developer.tomba.io/#linkedin-finder>
+#' @references <https://docs.tomba.io/api/finder#linkedin-finder>
 #' @return A list persons data containing the: first_name,last_name,email,score,department,last_updated.
 #' @examples
 #' \dontrun{
@@ -267,7 +267,7 @@ setMethod(f="linkedin_finder",
 #' @md
 #' @param obj Tomba class
 #' @param email a character The email address you want to find phone.
-#' @references <https://developer.tomba.io/#phone-finder>
+#' @references <https://docs.tomba.io/api/finder#phone-finder>
 #' @return A list phone data containing the: local_format,intl_format,country_code,line_type,carrier,timezones
 #' @examples
 #' \dontrun{
@@ -299,7 +299,7 @@ setMethod(f="phone_finder",
 #' @md
 #' @param obj Tomba class
 #' @param email a character email address you want to verify.
-#' @references <https://developer.tomba.io/#email-verifier>
+#' @references <https://docs.tomba.io/api/verifier#email-verifier>
 #' @return A list email data containing the: MX records,SMTP server accepts all,SMTP check,deliverability score,status of the email address,status of the verification.
 #' @examples
 #' \dontrun{
@@ -330,7 +330,7 @@ setMethod(f="email_verifier",
 #' @md
 #' @param obj Tomba class
 #' @param email a character email address you want to find sources.
-#' @references <https://developer.tomba.io/#email-sources>
+#' @references <https://docs.tomba.io/api/~endpoints#email-sources>
 #' @return A list sources data data containing the: URL, URL extracted on and last seen on, check if the URL still on page (TRUE|FALSE).
 #' @examples
 #' \dontrun{
@@ -360,7 +360,7 @@ setMethod(f="email_sources",
 #'
 #' @md
 #' @param obj Tomba class
-#' @references <https://developer.tomba.io/#usage>
+#' @references <https://docs.tomba.io/api/account#retrieve-api-usage>
 #' @return A list requests data containing the: usage of the domain,finder,verifier and source from: Website, Google Sheets add-on,api, browser extension, bulk tasks.
 #' @examples
 #' \dontrun{
@@ -390,7 +390,7 @@ setMethod(f="usage",
 #'
 #' @md
 #' @param obj Tomba class
-#' @references <https://developer.tomba.io/#logs>
+#' @references <https://docs.tomba.io/api/account#retrieve-api-logs>
 #' @return A list requests data containing the: url and The User Agent and IP address associated with the Request,The cost false Free true 1 request,The date,The ISO 3166-1 alpha-2 country code.
 #' @examples
 #' \dontrun{
@@ -421,7 +421,7 @@ setMethod(f="logs",
 #' @md
 #' @param obj Tomba class
 #' @param domain a character Domain name from which you want to find the email addresses. For example, "stripe.com".
-#' @references <https://developer.tomba.io/#email-count>
+#' @references <https://docs.tomba.io/api/~endpoints#email-count>
 #' @return A list domain count data containing the: Total email,Total personal email,Total generic email,Total email on department _key_name_.
 #' @examples
 #' \dontrun{
@@ -457,7 +457,7 @@ setMethod(f="count",
 #' @md
 #' @param obj Tomba class
 #' @param domain a character Domain name from which you want to check. For example, "gmail.com".
-#' @references <https://developer.tomba.io/#domain-status>
+#' @references <https://docs.tomba.io/api/~endpoints#domain-status>
 #' @return A list domain status data containing the: is webmail email service or is disposable email service
 #' @examples
 #' \dontrun{
@@ -491,7 +491,7 @@ setMethod(f="status",
 #' @md
 #' @param obj Tomba class
 #' @param search a character name company or website.
-#' @references <https://developer.tomba.io/#autocomplete>
+#' @references <https://docs.tomba.io/api/~endpoints#autocomplete>
 #' @return A list autocomplete data containing the: Total email on company,company website and name and logo.
 #' @examples
 #' \dontrun{

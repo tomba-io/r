@@ -9,14 +9,12 @@ allowing you to:
 - [Enrichment](https://tomba.io/author-finder) (The Enrichment lets you find the current job title, company, location and social profiles of the person behind the email.)
 - [Linkedin Finder](https://tomba.io/author-finder) (The Linkedin lets you find the current job title, company, location and social profiles of the person behind the linkedin URL.)
 - [Email Verifier](https://tomba.io/email-verifier) (checks the deliverability of a given email address, verifies if it has been found in our database, and returns their sources.)
-- [Email Sources](https://developer.tomba.io/#email-sources) (Find email address source somewhere on the web .)
-- [Company Domain autocomplete](https://developer.tomba.io/#autocomplete) (Company Autocomplete is an API that lets you auto-complete company names and retrieve logo and domain information.)
 
 ## Getting Started
 
 You'll need an Tomba API access token, which you can get by signing up for a free account at [https://app.tomba.io/auth/register](https://app.tomba.io/auth/register)
 
-The free plan is limited to 25 search request and 50 verification a month,  To enable all the data fields and additional request volumes see [https://tomba.io/pricing](https://tomba.io/pricing).
+The free plan is limited to 25 search request and 50 verification a month, To enable all the data fields and additional request volumes see [https://tomba.io/pricing](https://tomba.io/pricing).
 
 ## Installation
 
@@ -223,13 +221,13 @@ Sample codes under [**examples/**](/examples/) folder.
 
 ## Documentation
 
-See the [official documentation](https://developer.tomba.io/).
+See the [official documentation](https://docs.tomba.io/introduction).
 
 ### Other Libraries
 
 There are official Tomba Email Finder client libraries available for many languages including PHP, Python, Go, Java, Ruby, and many popular frameworks such as Django, Rails and Laravel. There are also many third party libraries and integrations available for our API.
 
-[https://developer.tomba.io/#introduction-libraries](https://developer.tomba.io/#introduction-libraries)
+[https://docs.tomba.io/libraries](https://docs.tomba.io/libraries)
 
 ### About Tomba
 
