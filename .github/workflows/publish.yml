@@ -34,7 +34,7 @@ jobs:
 
       - name: R CMD check
         run: |
-          _R_CHECK_FORCE_SUGGESTS_=false R CMD check --as-cran --no-tests ${{ steps.pkg.outputs.tarball }}
+          _R_CHECK_FORCE_SUGGESTS_=false R CMD check --as-cran --no-tests --no-manual ${{ steps.pkg.outputs.tarball }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2

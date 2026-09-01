@@ -466,13 +466,13 @@ Founded to solve the problem of unreliable email data, [Tomba.io](https://tomba.
 | PHP      | [tomba-io/php](https://packagist.org/packages/tomba-io/php) |
 | Ruby     | [tomba](https://rubygems.org/gems/tomba)                    |
 | Go       | [tomba-io/go](https://pkg.go.dev/github.com/tomba-io/go)    |
-| Rust     | [tomba](https://crates.io/crates/tomba)                     |
+| Rust     | [tomba](https://github.com/tomba-io/rust)                   |
 | Dart     | [tomba](https://pub.dev/packages/tomba)                     |
 | Deno     | [@tomba/sdk](https://jsr.io/@tomba/sdk)                     |
 | Elixir   | [tomba](https://hex.pm/packages/tomba)                      |
 | C#       | [Tomba](https://www.nuget.org/packages/Tomba)               |
 | Perl     | [Tomba::Client](https://metacpan.org/pod/Tomba::Client)     |
-| Lua      | [tomba](https://luarocks.org/modules/tomba/tomba)           |
+| Lua      | [tomba](https://github.com/tomba-io/lua)                    |
 | R        | [tomba](https://github.com/tomba-io/r)                      |
 
 ### Resources
@@ -485,4 +485,4 @@ Founded to solve the problem of unreliable email data, [Tomba.io](https://tomba.
 
 ## License
 
-Apache 2.0 -- see [LICENSE](http://www.apache.org/licenses/LICENSE-2.0.html) for details.
+Apache 2.0 -- see [LICENSE](https://www.apache.org/licenses/LICENSE-2.0) for details.
