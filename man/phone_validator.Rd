@@ -5,18 +5,23 @@
 \alias{phone_validator,Tomba-method}
 \title{Phone Validator}
 \usage{
-phone_validator(obj, phone)
+phone_validator(obj, phone, country_code = NULL)
 
-\S4method{phone_validator}{Tomba}(obj, phone)
+\S4method{phone_validator}{Tomba}(obj, phone, country_code = NULL)
 }
 \arguments{
 \item{obj}{A \code{\link{Tomba}} object.}
 
 \item{phone}{Character. The phone number to validate.}
+
+\item{country_code}{Character. Optional country code for parsing local numbers (e.g., "US").}
 }
 \value{
 A list with validation data.
 }
 \description{
 Validate a phone number and retrieve metadata.
+}
+\seealso{
+\url{https://docs.tomba.io/api/phone#phone-validator}
 }

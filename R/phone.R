@@ -56,15 +56,16 @@ setMethod(
 #' @export
 setGeneric(
   name = "phone_validator",
-  def  = function(obj, phone) standardGeneric("phone_validator")
+  def  = function(obj, phone, country_code = NULL) standardGeneric("phone_validator")
 )
 
 #' @rdname phone_validator
 setMethod(
   f = "phone_validator",
   signature = "Tomba",
-  definition = function(obj, phone) {
+  definition = function(obj, phone, country_code = NULL) {
     query <- list(phone = phone)
+    if (!is.null(country_code)) query$country_code <- country_code
     client(obj, PHONE_VALIDATOR_PATH, query)
   }
 )
