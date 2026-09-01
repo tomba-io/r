@@ -200,7 +200,7 @@ test_that("phone_finder works", {
 test_that("phone_validator works", {
   skip_if_not(has_credentials(), "No API credentials")
   cl <- make_client()
-  result <- phone_validator(cl, phone = "+1234567890")
+  result <- phone_validator(cl, phone = "+16502530000", country_code = "US")
   expect_type(result, "list")
 })
 

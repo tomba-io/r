@@ -126,7 +126,7 @@ LEADS_LISTS_PATH <- "leads_lists"
 
 #' Leads attributes endpoint path.
 #' @keywords internal
-LEADS_ATTRIBUTES_PATH <- "leads/attributes"
+LEADS_ATTRIBUTES_PATH <- "attributes"
 
 #' Bulk operations endpoint path.
 #' @keywords internal
