@@ -27,5 +27,5 @@ result <- status(client,domain="gmail.com")
 }
 }
 \references{
-\url{https://developer.tomba.io/#domain-status}
+\url{https://docs.tomba.io/api/domain-status}
 }

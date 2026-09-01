@@ -1,4 +1,11 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^examples$
-^LICENSE$
+^\.github$
+^\.lintr$
+^\.env$
+^\.env\.example$
+^\.gitignore$
+^\.git$
+^\.\.Rcheck$
+^\.busted$

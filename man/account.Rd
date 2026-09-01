@@ -25,5 +25,5 @@ result <- account(obj)
 }
 }
 \references{
-\url{https://developer.tomba.io/#account-information}
+\url{https://docs.tomba.io/api/account}
 }

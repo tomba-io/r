@@ -5,14 +5,16 @@
 \alias{phone_finder,Tomba-method}
 \title{Phone Finder}
 \usage{
-phone_finder(obj, email)
+phone_finder(obj, email, webhook_url = NULL)
 
-\S4method{phone_finder}{Tomba}(obj, email)
+\S4method{phone_finder}{Tomba}(obj, email, webhook_url = NULL)
 }
 \arguments{
 \item{obj}{Tomba class}
 
 \item{email}{a character The email address you want to find phone.}
+
+\item{webhook_url}{Character. Webhook URL for async results (optional, default \code{NULL}).}
 }
 \value{
 A list phone data containing the: local_format,intl_format,country_code,line_type,carrier,timezones
@@ -27,5 +29,5 @@ result <- phone_finder(client,email="******@zapier.com")
 }
 }
 \references{
-\url{https://developer.tomba.io/#phone-finder}
+\url{https://docs.tomba.io/api/phone#phone-finder}
 }

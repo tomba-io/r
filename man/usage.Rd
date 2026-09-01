@@ -25,5 +25,5 @@ result <- usage(client)
 }
 }
 \references{
-\url{https://developer.tomba.io/#usage}
+\url{https://docs.tomba.io/api/account#usage}
 }

@@ -5,14 +5,16 @@
 \alias{author_finder,Tomba-method}
 \title{Author Finder}
 \usage{
-author_finder(obj, url)
+author_finder(obj, url, webhook_url = NULL)
 
-\S4method{author_finder}{Tomba}(obj, url)
+\S4method{author_finder}{Tomba}(obj, url, webhook_url = NULL)
 }
 \arguments{
 \item{obj}{Tomba class}
 
 \item{url}{a character The URL of the article. For example, "https://clearbit.com/blog/company-name-to-domain-api".}
+
+\item{webhook_url}{Character. Webhook URL for async results (optional, default \code{NULL}).}
 }
 \value{
 A list persons data containing the: first_name,last_name,email,score,department,last_updated.
@@ -27,5 +29,5 @@ result <- author_finder(client,url="https://clearbit.com/blog/company-name-to-do
 }
 }
 \references{
-\url{https://developer.tomba.io/#author-finder}
+\url{https://docs.tomba.io/api/finder#author-finder}
 }

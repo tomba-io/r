@@ -27,5 +27,5 @@ result <- count(client,domain="tomba.io")
 }
 }
 \references{
-\url{https://developer.tomba.io/#email-count}
+\url{https://docs.tomba.io/api/finder#email-count}
 }

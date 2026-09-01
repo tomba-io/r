@@ -27,5 +27,5 @@ result <- email_sources(obj,email="info@tomba.io")
 }
 }
 \references{
-\url{https://developer.tomba.io/#email-sources}
+\url{https://docs.tomba.io/api/finder#email-sources}
 }

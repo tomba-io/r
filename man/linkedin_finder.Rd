@@ -5,14 +5,16 @@
 \alias{linkedin_finder,Tomba-method}
 \title{Author Finder}
 \usage{
-linkedin_finder(obj, url)
+linkedin_finder(obj, url, webhook_url = NULL)
 
-\S4method{linkedin_finder}{Tomba}(obj, url)
+\S4method{linkedin_finder}{Tomba}(obj, url, webhook_url = NULL)
 }
 \arguments{
 \item{obj}{Tomba class}
 
 \item{url}{a character The URL of the Linkedin. For example, "https://www.linkedin.com/in/alex-maccaw-ab592978".}
+
+\item{webhook_url}{Character. Webhook URL for async results (optional, default \code{NULL}).}
 }
 \value{
 A list persons data containing the: first_name,last_name,email,score,department,last_updated.
@@ -27,5 +29,5 @@ result <- linkedin_finder(client,url="httpshttps://www.linkedin.com/in/alex-macc
 }
 }
 \references{
-\url{https://developer.tomba.io/#linkedin-finder}
+\url{https://docs.tomba.io/api/finder#linkedin-finder}
 }

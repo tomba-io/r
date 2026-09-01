@@ -5,12 +5,16 @@
 \alias{logs,Tomba-method}
 \title{Logs}
 \usage{
-logs(obj)
+logs(obj, page = NULL, limit = NULL)
 
-\S4method{logs}{Tomba}(obj)
+\S4method{logs}{Tomba}(obj, page = NULL, limit = NULL)
 }
 \arguments{
 \item{obj}{Tomba class}
+
+\item{page}{Integer. Page number for pagination (optional).}
+
+\item{limit}{Integer. Number of results per page (optional).}
 }
 \value{
 A list requests data containing the: url and The User Agent and IP address associated with the Request,The cost false Free true 1 request,The date,The ISO 3166-1 alpha-2 country code.
@@ -25,5 +29,5 @@ result <- logs(client)
 }
 }
 \references{
-\url{https://developer.tomba.io/#logs}
+\url{https://docs.tomba.io/api/account#logs}
 }

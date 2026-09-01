@@ -5,14 +5,16 @@
 \alias{email_verifier,Tomba-method}
 \title{Email Verifier}
 \usage{
-email_verifier(obj, email)
+email_verifier(obj, email, webhook_url = NULL)
 
-\S4method{email_verifier}{Tomba}(obj, email)
+\S4method{email_verifier}{Tomba}(obj, email, webhook_url = NULL)
 }
 \arguments{
 \item{obj}{Tomba class}
 
 \item{email}{a character email address you want to verify.}
+
+\item{webhook_url}{Character. Webhook URL for async results (optional, default \code{NULL}).}
 }
 \value{
 A list email data containing the: MX records,SMTP server accepts all,SMTP check,deliverability score,status of the email address,status of the verification.
@@ -27,5 +29,5 @@ result <- email_verifier(obj,email="info@tomba.io")
 }
 }
 \references{
-\url{https://developer.tomba.io/#email-verifier}
+\url{https://docs.tomba.io/api/verifier#email-verifier}
 }

@@ -5,14 +5,18 @@
 \alias{domain_search,Tomba-method}
 \title{Domain search}
 \usage{
-domain_search(obj, domain)
+domain_search(obj, domain, enrich_mobile = NULL, webhook_url = NULL)
 
-\S4method{domain_search}{Tomba}(obj, domain)
+\S4method{domain_search}{Tomba}(obj, domain, enrich_mobile = NULL, webhook_url = NULL)
 }
 \arguments{
 \item{obj}{Tomba class}
 
 \item{domain}{Domain name from which you want to find the email addresses. For example, "stripe.com".}
+
+\item{enrich_mobile}{Logical. Enrich with mobile phone data (optional, default \code{NULL}).}
+
+\item{webhook_url}{Character. Webhook URL for async results (optional, default \code{NULL}).}
 }
 \value{
 A list domain data containing the organization name,country,social links, and list of emails.
@@ -27,5 +31,5 @@ result <- domain_search(obj,domain="stripe")
 }
 }
 \references{
-\url{https://developer.tomba.io/#domain-search}
+\url{https://docs.tomba.io/api/finder#domain-search}
 }

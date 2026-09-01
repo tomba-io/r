@@ -27,5 +27,5 @@ result <- autocomplete(obj,search="google")
 }
 }
 \references{
-\url{https://developer.tomba.io/#autocomplete}
+\url{https://docs.tomba.io/api/domain-suggestions}
 }

@@ -5,9 +5,9 @@
 \alias{email_finder,Tomba-method}
 \title{Email Finder}
 \usage{
-email_finder(obj, domain, fname, lname)
+email_finder(obj, domain, fname, lname, webhook_url = NULL)
 
-\S4method{email_finder}{Tomba}(obj, domain, fname, lname)
+\S4method{email_finder}{Tomba}(obj, domain, fname, lname, webhook_url = NULL)
 }
 \arguments{
 \item{obj}{Tomba class}
@@ -17,6 +17,8 @@ email_finder(obj, domain, fname, lname)
 \item{fname}{The person's first name. It doesn't need to be in lowercase..}
 
 \item{lname}{The person's last name. It doesn't need to be in lowercase..}
+
+\item{webhook_url}{Character. Webhook URL for async results (optional, default \code{NULL}).}
 }
 \value{
 A list persons data containing the: first_name,last_name,email,score,department,last_updated.
@@ -31,5 +33,5 @@ result <- email_finder(client,fname="FIRST_NAME",lname="LASST_NAME")
 }
 }
 \references{
-\url{https://developer.tomba.io/#email-finder}
+\url{https://docs.tomba.io/api/finder#email-finder}
 }
