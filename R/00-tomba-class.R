@@ -283,6 +283,58 @@ setMethod(
 )
 
 # ---------------------------------------------------------------------------
+# Raw GET helper (returns text body, no JSON parsing)
+# ---------------------------------------------------------------------------
+
+#' Tomba HTTP GET Client (Raw)
+#'
+#' Sends a GET request to the Tomba API and returns the raw response body
+#' as a character string instead of parsing it as JSON.
+#' Useful for endpoints that return non-JSON content (e.g. CSV downloads).
+#'
+#' @param obj A \code{\link{Tomba}} object.
+#' @param path Character. The API path (relative to the base URL).
+#' @param query A named list of query parameters (optional).
+#' @return A list with \code{data} (raw text body) and \code{rate_limit}.
+#'
+#' @rdname client_raw
+#' @export
+setGeneric(
+  name = "client_raw",
+  def  = function(obj, path, query = NULL) {
+    standardGeneric("client_raw")
+  }
+)
+
+#' @rdname client_raw
+setMethod(
+  f = "client_raw",
+  signature = "Tomba",
+  definition = function(obj, path, query = NULL) {
+    res <- httr::GET(
+      url   = paste0(DEFAULT_BASE_URL, path),
+      query = query,
+      httr::add_headers(.headers = .tomba_headers(obj)),
+      httr::timeout(120),
+      encode = "json"
+    )
+    if (httr::status_code(res) >= 400) {
+      stop(
+        sprintf(
+          "Tomba API error %s: %s",
+          httr::status_code(res),
+          httr::content(res, as = "text", encoding = "UTF-8")
+        ),
+        call. = FALSE
+      )
+    }
+    txt <- httr::content(res, as = "text", encoding = "UTF-8")
+    rate_limit <- .tomba_rate_limit(res)
+    list(data = txt, rate_limit = rate_limit)
+  }
+)
+
+# ---------------------------------------------------------------------------
 # POST helper
 # ---------------------------------------------------------------------------
 

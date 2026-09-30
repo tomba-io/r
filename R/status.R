@@ -15,7 +15,7 @@ NULL
 #' result <- status(cl, domain = "gmail.com")
 #' }
 #'
-#' @seealso \url{https://docs.tomba.io/api/domain#domain-status#domain-status}
+#' @seealso \url{https://docs.tomba.io/api/domain#domain-status}
 #' @rdname status
 #' @export
 setGeneric(
@@ -48,7 +48,7 @@ setMethod(
 #' result <- autocomplete(cl, search = "google")
 #' }
 #'
-#' @seealso \url{https://docs.tomba.io/api/domain#domain-status#company-autocomplete}
+#' @seealso \url{https://docs.tomba.io/api/domain-suggestions#get-domain-suggestions}
 #' @rdname autocomplete
 #' @export
 setGeneric(

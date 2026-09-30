@@ -317,7 +317,7 @@ setMethod(
   definition = function(obj, bulk_type, bulk_id) {
     .validate_bulk_type(bulk_type)
     path <- paste0(BULK_PATH, "/", bulk_type, "/", bulk_id, "/download")
-    client(obj, path, NULL)
+    client_raw(obj, path, NULL)
   }
 )
 
