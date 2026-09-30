@@ -38,17 +38,19 @@ setMethod(
 
 #' Create Flag
 #'
-#' Flag an email address, optionally with a reason.
+#' Flag an email address with a type, value, and reason.
 #'
 #' @param obj A \code{\link{Tomba}} object.
-#' @param email Character. The email address to flag.
-#' @param reason Character. Optional reason for flagging (default \code{NULL}).
+#' @param flag_type Character. The type of flag (e.g. "email", "domain").
+#' @param value Character. The value to flag (e.g. an email address or domain).
+#' @param reason Character. The reason for flagging.
+#' @param comment Character. Optional comment (default \code{NULL}).
 #' @return A list confirming the flag creation.
 #'
 #' @examples
 #' \dontrun{
 #' cl <- Tomba(key = "ta_xxxx", secret = "ts_xxxx")
-#' result <- create_flag(cl, email = "spam@example.com", reason = "spam")
+#' result <- create_flag(cl, flag_type = "email", value = "spam@example.com", reason = "spam")
 #' }
 #'
 #' @seealso \url{https://docs.tomba.io/api/flag#create-flag}
@@ -56,17 +58,17 @@ setMethod(
 #' @export
 setGeneric(
   name = "create_flag",
-  def  = function(obj, email, reason = NULL) standardGeneric("create_flag")
+  def  = function(obj, flag_type, value, reason, comment = NULL) standardGeneric("create_flag")
 )
 
 #' @rdname create_flag
 setMethod(
   f = "create_flag",
   signature = "Tomba",
-  definition = function(obj, email, reason = NULL) {
-    data <- list(email = email)
-    if (!is.null(reason)) {
-      data$reason <- reason
+  definition = function(obj, flag_type, value, reason, comment = NULL) {
+    data <- list(flag_type = flag_type, value = value, reason = reason)
+    if (!is.null(comment)) {
+      data$comment <- comment
     }
     client_post(obj, FLAG_PATH, data)
   }
